@@ -34,17 +34,21 @@ public class CustomTextView extends TextView implements INightSwitch {
 
     /**
      * 切换为夜间模式
+     *
+     * @param fromUser 是用户主动切换触发
      */
     @Override
-    public void changeToNightMode() {
+    public void changeToNightMode(boolean fromUser) {
         setTextColor(Color.parseColor("#FAFAFA"));
     }
 
     /**
      * 切换为日间模式
+     *
+     * @param fromUser 是用户主动切换触发
      */
     @Override
-    public void changeToDayMode() {
+    public void changeToDayMode(boolean fromUser) {
         setTextColor(Color.parseColor("#212121"));
     }
 }

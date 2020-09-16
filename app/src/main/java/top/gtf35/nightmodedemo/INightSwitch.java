@@ -7,11 +7,15 @@ public interface INightSwitch {
 
     /**
      * 切换为夜间模式
+     *
+     * @param fromUser 是用户主动切换触发
      */
-    void changeToNightMode();
+    void changeToNightMode(boolean fromUser);
 
     /**
      * 切换为日间模式
+     *
+     * @param fromUser 是用户主动切换触发
      */
-    void changeToDayMode();
+    void changeToDayMode(boolean fromUser);
 }

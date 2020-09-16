@@ -40,15 +40,33 @@ public class CustomLinearLayout extends LinearLayout implements INightSwitch {
         addView(textView, textLP);
     }
 
+    /**
+     * 切换为夜间模式
+     *
+     * @param fromUser 是用户主动切换触发
+     */
     @Override
-    public void changeToNightMode() {
+    public void changeToNightMode(boolean fromUser) {
         // 动画示例，自己实现颜色属性动画
-        ObjectAnimator.ofArgb(this, "backgroundColor", Color.BLACK).start();
+        if (fromUser) {
+            ObjectAnimator.ofArgb(this, "backgroundColor", Color.BLACK).start();
+        } else {
+            setBackgroundColor(Color.BLACK);
+        }
     }
 
+    /**
+     * 切换为日间模式
+     *
+     * @param fromUser 是用户主动切换触发
+     */
     @Override
-    public void changeToDayMode() {
+    public void changeToDayMode(boolean fromUser) {
         // 动画示例，自己实现颜色属性动画
-        ObjectAnimator.ofArgb(this, "backgroundColor", Color.WHITE).start();
+        if (fromUser) {
+            ObjectAnimator.ofArgb(this, "backgroundColor", Color.WHITE).start();
+        } else {
+            setBackgroundColor(Color.WHITE);
+        }
     }
 }

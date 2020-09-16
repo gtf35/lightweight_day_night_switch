@@ -31,9 +31,9 @@ public class NightControl {
      */
     public static void wrapNowMode(INightSwitch nightSwitch) {
         if (mIsNight) {
-            nightSwitch.changeToNightMode();
+            nightSwitch.changeToNightMode(false);
         } else {
-            nightSwitch.changeToDayMode();
+            nightSwitch.changeToDayMode(false);
         }
     }
 
@@ -72,9 +72,9 @@ public class NightControl {
         if (v instanceof INightSwitch) {
             INightSwitch nightSwitchImp = (INightSwitch)v;
             if (isNight) {
-                nightSwitchImp.changeToNightMode();
+                nightSwitchImp.changeToNightMode(true);
             } else {
-                nightSwitchImp.changeToDayMode();
+                nightSwitchImp.changeToDayMode(true);
             }
         }
 

@@ -29,9 +29,17 @@ public class CustomButton extends Button implements INightSwitch {
 
     /**
      * 切换为夜间模式
+     *
+     * @param fromUser 是用户主动切换触发
      */
     @Override
-    public void changeToNightMode() {
+    public void changeToNightMode(boolean fromUser) {
+        if (!fromUser) {
+            setBackgroundColor(Color.parseColor("#424242"));
+            setTextColor(Color.parseColor("#FAFAFA"));
+            return;
+        }
+
         // 动画示例，自己实现颜色属性动画
         ObjectAnimator.ofArgb(
                 this,
@@ -48,9 +56,17 @@ public class CustomButton extends Button implements INightSwitch {
 
     /**
      * 切换为日间模式
+     *
+     * @param fromUser 是用户主动切换触发
      */
     @Override
-    public void changeToDayMode() {
+    public void changeToDayMode(boolean fromUser) {
+        if (!fromUser) {
+            setBackgroundColor(Color.parseColor("#FAFAFA"));
+            setTextColor(Color.parseColor("#424242"));
+            return;
+        }
+
         // 动画示例，自己实现颜色属性动画
         ObjectAnimator.ofArgb(
                 this,
